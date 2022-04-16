@@ -74,24 +74,25 @@ module.exports.MATCH_RESULT = MATCH_RESULT;
  * @type {string}
  */
 // 起動時
-module.exports.SPEAK_MESSAGE_WELCOME = "こんにちは。じゃんけんをしましょう！";
+module.exports.SPEAK_MESSAGE_WELCOME = "あきこさん、ともこさん、こんにちは。じゃんけんをしましょう！";
 
 // じゃんけんの選択肢を出す
 module.exports.SPEAK_MESSAGE_PLAY =
 "どの手を出しますか？「じゃんけんグー」「じゃんけんチョキ」「じゃんけんパー」から選んでね。";
 
-// 勝ったときのメッセージ
+// 勝ったときのメッセージ // "https://actions.google.com/sounds/v1/cartoon/clown_horn.ogg"
+// clipBegin="9s" clipEnd="10s" repeatCount="2"
 const SPEAK_MESSAGE_RESULT_USER_WIN = `<speak>
-  <p>
+  <prosody pitch="+50%" rate="medium" volume="x-loud">
     <s>わたしは「じゃんけん%HAND」です。</s>
     <s>
       あなたの勝ちです！おめでとうございます<sub alias="">🎉</sub>
-      <audio src="https://actions.google.com/sounds/v1/cartoon/clown_horn.ogg"
-             clipBegin="9s" clipEnd="10s" repeatCount="2">
+      <audio src= "https://actions.google.com/sounds/v1/cartoon/clown_horn.ogg">
+        <desc>Theme</desc>
       </audio>
     </s>
     <s>つづけますか？</s>
-  </p>
+  </prosody>
 </speak>`;
 // 負けたときのメッセージ
 const SPEAK_MESSAGE_RESULT_USER_LOSE = `<speak>
@@ -125,16 +126,23 @@ module.exports.SUGGEST_ARRAY_AFTER_MATCH = ["つづける", "やめる"];
 /**
  * リスト表示用
  **/
-module.exports.LIST_TITLE = "じゃんけんの手を選んでね";
-module.exports.LIST_ITEM_DESCRIPTION_ROCK = "グーはチョキより強く、パーより弱いです";
-module.exports.LIST_ITEM_DESCRIPTION_SCISSORS = "チョキはパーより強く、グーより弱いです";
-module.exports.LIST_ITEM_DESCRIPTION_PAPER = "パーはグーより強く、チョキより弱いです";
+module.exports.LIST_TITLE = "あきこさん、ともこさん、じゃんけんの手を選んでね";
+module.exports.LIST_ITEM_DESCRIPTION_ROCK = "グーは石のイメージです。チョキより強く、パーより弱いです";
+module.exports.LIST_ITEM_DESCRIPTION_SCISSORS =
+"チョキはパーより強く、グーより弱いです。この絵は何の絵かわかりますか？";
+module.exports.LIST_ITEM_DESCRIPTION_PAPER =
+"パーはグーより強く、チョキより弱いです。ちなみにこの手は誰の手かわかりますか？";
 
 /**
  * リスト表示用画像URL
  **/
-const BASE_IMAGE_URL = "https://github.com/namito/my_materials/blob/master/sample/";
-const RAW_PARAM = "?raw=true";
-module.exports.IMAGE_URL_ROCK = BASE_IMAGE_URL + "rock.png" + RAW_PARAM;
-module.exports.IMAGE_URL_SCISSORS = BASE_IMAGE_URL + "scissors.png" + RAW_PARAM;
-module.exports.IMAGE_URL_PAPER = BASE_IMAGE_URL + "paper.png" + RAW_PARAM;
+// const BASE_IMAGE_URL = "https://github.com/namito/my_materials/blob/master/sample/";
+// const RAW_PARAM = "?raw=true";
+module.exports.IMAGE_URL_ROCK = "https://firebasestorage.googleapis.com/v0/b/navi-control-559b4.appspot.com/o/stone.png?alt=media&token=d930ee09-840e-482f-a582-a6ad1ac33b8c";
+// BASE_IMAGE_URL + "rock.png" + RAW_PARAM
+module.exports.IMAGE_URL_SCISSORS = "https://firebasestorage.googleapis.com/v0/b/navi-control-559b4.appspot.com/o/choki.png?alt=media&token=7ffe3247-15ba-4832-a4fc-0f29997ef0b5";
+// BASE_IMAGE_URL + "scissors.png" + RAW_PARAM;
+module.exports.IMAGE_URL_PAPER = "https://firebasestorage.googleapis.com/v0/b/navi-control-559b4.appspot.com/o/paa.png?alt=media&token=f3c56eba-5019-42c6-8238-24ddba39afab";
+// BASE_IMAGE_URL + "paper.png" + RAW_PARAM
+
+module.exports.IMAGE_URL_sakura = "";
